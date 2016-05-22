@@ -1,0 +1,295 @@
+
+
+
+
+ 
+    
+    
+                        log_send(ps_log_pipe[1], PS_LOG_MERGER | PS_LOG_ERROR | 2, generation, i + 1);
+                        xerror(DUP_ERROR, 0);
+                    close(fdR[j][0]);
+                    close(fdR[j][0]);
+                    close(fdW[j][0]);
+                    close(fdW[j][0]);
+                    close(fdW[j][1]);
+                    if ((fdrd[number_in] = dup(fdR[j][0])) == -1)
+                    log_send(ps_log_pipe[1], PS_LOG_MERGER | PS_LOG_ERROR | 2, generation, i + 1);
+                    log_send(ps_log_pipe[1], PS_LOG_MERGER | PS_LOG_ERROR | 2, generation, i + 1);
+                    number_in++;
+                    xerror(DUP_ERROR, 0);
+                    xerror(MEMORY_ERROR, 0);
+                    {
+                    }
+                //закрываем все дескрипторы
+                //освобождаем память мерждера
+                close(fdR[j][0]);
+                close(fdW[j][0]);
+                close(fdW[j][0]);
+                close(fdW[j][1]);
+                for (j = 0; j < i; j++)
+                for (j = i; j < merger_cnt; j++)
+                for (j = i; j < sorter_cnt; j += merger_cnt)
+                for (j = merger_cnt; j < sorter_cnt; j++)
+                free(fdR);
+                free(fdW);
+                if ((fdrd = (int *) calloc(sqnc_cnt, sizeof(int))) == NULL)
+                if (fdwr == -1)
+                int fdwr = dup(fdW[i][1]), *fdrd, number_in = 0;
+                log_send(ps_log_pipe[1], PS_LOG_MANAGER | PS_LOG_ERROR | 0);
+                log_send(ps_log_pipe[1], PS_LOG_MANAGER | PS_LOG_ERROR | 0);
+                log_send(ps_log_pipe[1], PS_LOG_MERGER | PS_LOG_END | 2, generation, i + 1);
+                log_send(ps_log_pipe[1], PS_LOG_MERGER | PS_LOG_RUN | 2, generation, i + 1);
+                log_send(ps_log_pipe[1], PS_LOG_SORTER | PS_LOG_ERROR | 1, i + 1);
+                merger(generation, i + 1, number_in, fdrd, fdwr, order, 0);
+                return 0;
+                xerror(DUP_ERROR, 0);
+                xerror(DUP_ERROR, 0);
+                xerror(FORK_ERROR, 1);
+                xerror(PIPE_ERROR, 1);
+                {
+                {
+                {
+                {
+                {
+                {
+                }
+                }
+                }
+                }
+                }
+                }
+            break;
+            break;
+            break;
+            break;
+            close(fdR[i][0]);
+            close(fdR[i][0]);
+            close(fdW[i][0]);
+            close(fdW[i][0]);
+            close(fdW[i][1]);
+            close(fdW[i][1]);
+            for (j = 0; j < i; j++)
+            for (j = i; j < sorter_cnt ; j++) //sorter_cnt > merger_cnt always
+            fprintf(stderr, "Error: unknown option");
+            free(fdR); // освобождаем неиспользуюмую память
+            free(fdW);
+            if (!(hlp = fork()))
+            if ((fdrd[i] = dup(fdW[i][0])) == -1)
+            if (fdrd == -1 || fdwr == -1)
+            if (hlp == -1)
+            if (pipe(fdW[i]) != 0)
+            int fdrd = dup(fdR[i][0]), fdwr = dup(fdW[i][1]);
+            log_send(ps_log_pipe[1], PS_LOG_MANAGER | PS_LOG_ERROR | 0);
+            log_send(ps_log_pipe[1], PS_LOG_MANAGER | PS_LOG_ERROR | 0);
+            log_send(ps_log_pipe[1], PS_LOG_MANAGER | PS_LOG_ERROR | 0);
+            log_send(ps_log_pipe[1], PS_LOG_MANAGER | PS_LOG_ERROR | 0);
+            log_send(ps_log_pipe[1], PS_LOG_MERGER | PS_LOG_ERROR | 2, generation + 1, 1);
+            log_send(ps_log_pipe[1], PS_LOG_SORTER | PS_LOG_END | 1, i + 1);
+            log_send(ps_log_pipe[1], PS_LOG_SORTER | PS_LOG_RUN | 1, i + 1);
+            order = -1;
+            return -1;
+            return 0;
+            sorter(i, fdrd, fdwr, order);
+            srt_cnt = sorter_cnt;
+            sscanf(optarg, "%d", &sorter_cnt);
+            sscanf(optarg, "%d", &sqnc_cnt);
+            xerror(FORK_ERROR, 1);
+            xerror(MEMORY_ERROR, 0);
+            xerror(MEMORY_ERROR, 1);
+            xerror(PIPE_ERROR, 1);
+            xerror(PIPE_ERROR, 1);
+            {
+            {
+            {
+            {
+            {
+            {//Merger
+            }
+            }
+            }
+            }
+            }
+            }
+        //Разрбираем параметры
+        //порождаем sorter ов
+        amount_merger += merger_cnt;
+        case '?':
+        case 'm':
+        case 'r':
+        case 1:
+        close(fdR[i][0]);
+        close(fdR[i][1]);
+        close(fdW[i][0]);
+        close(fdW[i][1]);
+        close(fdW[i][1]);
+        close(ps_log_pipe[1]);
+        fdR = fdW;
+        fdW = (int (*)[2]) calloc (merger_cnt, sizeof(int [2]));
+        for (i = 0; i < merger_cnt; i++)
+        for (i = 0; i < merger_cnt; i++)
+        for (i = 0; i < sorter_cnt; i++)
+        for (i = 0; i < sorter_cnt; i++)
+        for (i = merger_cnt; i < sorter_cnt; i++)
+        fprintf(stderr, "Error: didn't define necessary parametr\n");
+        free(fdR);
+        free(fdW);
+        generation++;
+        if (!(hlp = fork()))
+        if ((fdrd = (int *) calloc(sorter_cnt, sizeof(int))) == NULL)
+        if (fdW == NULL)
+        if (hlp == -1)
+        if (pipe(fdW[i]) != 0)
+        if (pipe(fdW[i]) != 0)
+        int *fdrd;
+        log_send(ps_log_pipe[1], PS_LOG_MANAGER | PS_LOG_BURN | 2, generation, merger_cnt);
+        log_send(ps_log_pipe[1], PS_LOG_MANAGER | PS_LOG_ERROR | 0);
+        log_send(ps_log_pipe[1], PS_LOG_MANAGER | PS_LOG_ERROR | 0);
+        log_send(ps_log_pipe[1], PS_LOG_MANAGER | PS_LOG_ERROR | 0);
+        log_send(ps_log_pipe[1], PS_LOG_MANAGER | PS_LOG_ERROR | 0);
+        log_send(ps_log_pipe[1], PS_LOG_MERGER | PS_LOG_END | 2, generation + 1, 1);
+        log_send(ps_log_pipe[1], PS_LOG_MERGER | PS_LOG_RUN | 2, generation + 1, 1);
+        log_send(ps_log_pipe[1], PS_LOG_PARTITIONER | PS_LOG_END | 0);
+        log_send(ps_log_pipe[1], PS_LOG_PARTITIONER | PS_LOG_RUN | 0);
+        logger(ps_log_pipe[0]);
+        merger(generation + 1, 1, sorter_cnt, fdrd, 1, order, 1);
+        merger_cnt = sorter_cnt / sqnc_cnt + (sorter_cnt % sqnc_cnt != 0);
+        partitioner(sorter_cnt, fdW);
+        return 0;
+        return 0;
+        return 0;
+        return 0;
+        sorter_cnt = merger_cnt;
+        switch (option) {
+        wait(NULL);
+        xerror(FORK_ERROR, 1);
+        xerror(FORK_ERROR, 1);
+        xerror(MEMORY_ERROR, 1);
+        xerror(MEMORY_ERROR, 1);
+        xerror(PIPE_ERROR, 1);
+        xerror(PIPE_ERROR, 1);
+        {
+        {
+        {
+        {
+        {
+        {
+        {
+        {
+        {
+        {
+        {
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+        }
+    // merger_cnt  количество принимающих процессов
+    //Далее считаем что sorter_cnt это количество отправляющих процессов
+    //На каждом этапе, fdW будет отвечать за указатель на массив (двумерный Ax2) пищущих дискрипторов
+    //а fdR за указатель на массив читающих дискрипторов
+    amount_merger++;
+    close(ps_log_pipe[0]);
+    close(ps_log_pipe[1]);
+    do
+    fdR = fdW;
+    fdW = (int (*)[2]) calloc(sorter_cnt, sizeof(int [2]));
+    for (i = 0; i < 1 + srt_cnt + amount_merger; i++)
+    for (i = 0; i < sorter_cnt; i++)
+    for (i = 0; i < sorter_cnt; i++)
+    for (i = 0; i < sorter_cnt; i++)
+    for (i = 0; i < sorter_cnt; i++)
+    free(fdR);
+    if (!(hlp = fork()))
+    if (!(hlp = fork()))
+    if (!(pid_log = fork()))
+    if ((fdW = (int (*)[2]) calloc (sorter_cnt, sizeof(int [2]))) == NULL)
+    if (fdW == NULL)
+    if (hlp == -1)
+    if (hlp == -1)
+    if (pid_log == -1)
+    if (pipe(ps_log_pipe) == -1)
+    if (sorter_cnt <= 0 || sqnc_cnt <= 0)
+    int (*fdW)[2], (*fdR)[2];
+    int option, sorter_cnt = 0, sqnc_cnt = 0, merger_cnt, order = 1, i, j, generation = 0, amount_merger = 0, srt_cnt = 0, hlp;
+    log_send(ps_log_pipe[1], PS_LOG_MANAGER | PS_LOG_BURN | 2, generation + 1, 1);
+    log_send(ps_log_pipe[1], PS_LOG_MANAGER | PS_LOG_END | 0);
+    log_send(ps_log_pipe[1], PS_LOG_MANAGER | PS_LOG_PARAM | 3, sorter_cnt, sqnc_cnt, order == -1 );
+    log_send(ps_log_pipe[1], PS_LOG_MANAGER | PS_LOG_RUN | 0);
+    log_send(ps_log_pipe[1], PS_LOG_MANAGER | PS_LOG_SUMM | 3, srt_cnt, amount_merger, generation);
+    merger_cnt = sorter_cnt / sqnc_cnt + (sorter_cnt % sqnc_cnt != 0);
+    return 0;
+    signal(SIGUSR1, SIG_DFL);
+    signal(SIGUSR1, SIG_IGN);
+    signal(SIGUSR1, SIG_IGN);
+    signal(SIGUSR2, handle);
+    wait(NULL);
+    while ((option = getopt(argc, argv, "-m:r")) != -1)
+    {
+    {
+    {
+    {
+    {
+    {
+    {
+    {
+    {
+    {
+    {
+    {
+    {
+    {//partitioner
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    }
+    } while (merger_cnt != 1);
+ * -r  сортировка в обратном порядке
+ * @autor Денис Швецов
+ * @brief Основной файл проекта
+ * @file manager.c
+ * @mainpage Программа выполняющая параллельную сортировку строк
+ * psort [ключи] <число sorter-процессов>
+ * МГУ им. М.В. Ломоносова
+ * группа 205
+ * ключи: -m число последовательностей, которые объеденяет merger-процесс (обязательный)
+ * ф-т ВМК
+ */
+ */
+ */
+#include "log.h"
+#include "pserror.h"
+#include "psortlib.h"
+#include <fcntl.h>
+#include <signal.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/ipc.h>
+#include <sys/sem.h>
+#include <sys/types.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <time.h>
+#include <unistd.h>
+/**
+/**
+/** Вход в программу
+int main(int argc, char **argv)
+{
+}

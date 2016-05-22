@@ -1,0 +1,48 @@
+#!/bin/bash
+count=1
+succes=0
+fail=0
+
+for sorter in  54 82 123 211 292 300 339 340
+do
+	for merger in 2 4 8 10 19 54
+	do
+	count=1
+		while [ $count -le 9 ]
+		do
+			if ./bin/psort "$sorter" -m "$merger" <./test/test"$count".txt >./test/test"$count".ans 2> /dev/null 
+			then
+				if cmp -s ./test/test"$count".ans ./test/test"$count".check 
+				then
+					echo "test $count -- OK sorter: $sorter merger: $merger"
+					let "succes = succes + 1"
+				else
+					echo "test $count -- WRONG ANSWER sorter :$sorter merger: $merger"
+					let "fail = fail + 1"
+				fi
+			else
+				echo "test $count -- FAILED sorter:$sorter merger:$merger"
+				let "fail = fail + 1"
+			fi
+			rm ./test/test"$count".ans
+			
+			if ./bin/psort "$sorter" -m  -r "$merger" <./test/test"$count".txt >./test/testr"$count".ans 2> /dev/null 
+			then
+				if cmp -s ./test/test"$count".ans ./test/testr"$count".check 
+				then
+					echo "test $count -- OK sorter: $sorter merger: $merger"
+					let "succes = succes + 1"
+				else
+					echo "test $count -- WRONG ANSWER sorter :$sorter merger: $merger"
+					let "fail = fail + 1"
+				fi
+			else
+				echo "test $count -- FAILED sorter:$sorter merger:$merger"
+				let "fail = fail + 1"
+			fi
+			let "count = count + 1"
+		done
+	done
+done
+
+echo "SUCCESS: $succes FAILED:$fail"
